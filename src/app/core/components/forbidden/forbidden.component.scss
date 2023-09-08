@@ -1,0 +1,80 @@
+$primary-background-color: #040438;
+body {
+  background-color: $primary-background-color;
+  font-family: "REM", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $primary-background-color;
+}
+.forbidden-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  background-image: url("https://img.freepik.com/free-vector/tiny-people-standing-near-prohibited-gesture-isolated-flat-illustration_74855-11132.jpg?w=740&t=st=1693217577~exp=1693218177~hmac=f985ff78849ce93f9bf132b9a41efb4e1f25fbf6a02ab6ddfcb49f1995c031c5");
+  background-size: contain;
+  position: relative; /* Ajoutez cette propriété pour positionner l'ombre */
+
+  /* Ajout de l'ombre sur l'image de fond */
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(
+      4,
+      4,
+      56,
+      0.5
+    ); /* Couleur de l'ombre (noir avec une opacité de 0.5) */
+  }
+
+  .forbidden-content {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+
+    position: absolute;
+    right: 0;
+    top: 1;
+    margin-right:240px;
+
+    //border: 1px solid red;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: bolder;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    button {
+      background-color: orange;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2em;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken(orange, 10%); // Assombrir la couleur au survol
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+<!-- Ajouter le champ de recherche -->
+<mat-form-field class="search-field">
+	<input (keyup)="applyFilter($event)"
+		matInput
+		placeholder="Rechercher une classe">
+</mat-form-field>
+<p class="total-students">
+	Total Users: {{ totalStudents }}
+</p>
+
+<div class="page__content-data-list">
+	<ng-container *ngIf="totalStudents === 0">
+		<p class="no-matches-message">No matches found.</p>
+	</ng-container>
+	<div *ngFor="let student of dataSource.filteredData"
+		class="element-card">
+		<div class="element-card-content">
+			<h3 class="element-name">
+				{{ student.full_name | titlecase }}
+			</h3>
+			<p class="element-info">
+				Gender: {{ student.gender }}
+			</p>
+			<p class="element-info">
+				Matricule: {{ student.registrationNumber }}
+			</p>
+			<p class="element-info">
+				Email: {{ student.email }}
+			</p>
+			<p class="element-info">
+				Phone Number: {{ student.phone_number }}
+			</p>
+		</div>
+		<div class="element-card-actions">
+			<button [routerLink]="['/navigation/students', student.id, 'grades']"
+				class="btn btn-subject">
+				<mat-icon>subject</mat-icon>
+				<span class="hover-message">Grades</span>
+			</button>
+			<button [routerLink]="['/navigation/students', student.id, 'report-card']"
+				class="btn btn-report-card">
+				<mat-icon>description</mat-icon>
+				<span class="hover-message">Report Card</span>
+			</button>
+			<button [routerLink]="['/navigation/students/show',student.id]"
+				class="btn btn-details">
+				<mat-icon>info</mat-icon>
+				<span class="hover-message">Details</span>
+			</button>
+
+			<button [routerLink]="['/navigation/students/edit',student.id]"
+				class="btn btn-edit">
+				<mat-icon>create</mat-icon>
+				<span class="hover-message">Edit</span>
+			</button>
+
+			<button (click)="deleteStudent(student.id)"
+				class="btn btn-delete">
+				<mat-icon>delete</mat-icon>
+				<span class="hover-message">Delete</span>
+			</button>
+		</div>
+	</div>
+</div>

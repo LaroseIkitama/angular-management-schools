@@ -1,0 +1,103 @@
+$primary-background-color: #040438;
+$primary-color: orange;
+$secondary-color: #1591d0;
+$tertiary-color: #7eab3e;
+$error-color: crimson;
+
+body {
+  background-color: $primary-background-color;
+  font-family: "REM", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+
+  background-image: url("https://img.freepik.com/vecteurs-libre/minuscules-personnes-portant-cle-pour-ouvrir-cadenas_74855-16292.jpg?w=826&t=st=1690933814~exp=1690934414~hmac=61ab790088ce1af8e4761d240c76bdbf81775f8af914ebb74cd50efea5ed83f5");
+  background-size: cover;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(
+      4,
+      4,
+      56,
+      0.5
+    ); /* Couleur de l'ombre (noir avec une opacité de 0.5) */
+  }
+
+  app-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .content-container {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .content-login {
+      background-color: rgba(4, 4, 56, 0.5);
+      display: flex;
+      flex-direction: row;
+      padding: 20px;
+      max-width: 900px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(4, 4, 56, 0.5);
+
+      margin-top: 200px;
+
+      /* Form */
+      .login-form {
+        z-index: 1;
+        flex: 1;
+        .form-group {
+          margin-bottom: 20px;
+
+          .error-message {
+            color: $error-color;
+          }
+        }
+
+        label {
+          font-size: 1em;
+          font-weight: bold;
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        input {
+          width: 100%;
+          height: 47px;
+          padding: 10px;
+          font-size: 1em;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+      }
+
+      /* Description */
+      .login-description {
+        z-index: 1;
+        flex: 1;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content-container {
+    .login-description {
+      display: none;
+    }
+  }
+}

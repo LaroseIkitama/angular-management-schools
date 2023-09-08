@@ -1,0 +1,51 @@
+<mat-form-field class="search-field">
+	<input (keyup)="applyFilter($event)"
+		matInput
+		placeholder="Search ...">
+</mat-form-field>
+
+<p class="total-grades">
+	Total Grades: {{ totalGrades }}
+</p>
+
+<div class="page__content-data-list">
+	<ng-container *ngIf="dataSource.filteredData.length === 0">
+		<p class="no-matches-message">No matches found.</p>
+	</ng-container>
+	<div *ngFor="let grade of dataSource.filteredData"
+		class="element-card">
+		<div class="element-card-content">
+			<p class="element-info">
+				Type : {{ grade.type  }}
+			</p>
+			<p class="element-info">
+				Subject : {{ grade.subject.name  }}
+			</p>
+			<p class="element-info">
+				Score : {{ grade.score  }} / 20
+			</p>
+			<p class="element-info">
+				Comment : {{ grade.comment  }}
+			</p>
+		</div>
+		<div class="element-card-actions">
+			<button [routerLink]="['/navigation/grades/show',grade.id]"
+				class="btn btn-details">
+				<mat-icon>info</mat-icon>
+				<span class="hover-message">Details</span>
+			</button>
+
+			<button [routerLink]="['/navigation/grades/edit',grade.id]"
+				class="btn btn-edit">
+				<mat-icon>create</mat-icon>
+				<span class="hover-message">Edit</span>
+			</button>
+
+			<button (click)="deleteGrade(grade.id)"
+				class="btn btn-delete">
+				<mat-icon>delete</mat-icon>
+				<span class="hover-message">Delete</span>
+			</button>
+		</div>
+	</div>
+</div>

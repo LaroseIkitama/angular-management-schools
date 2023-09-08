@@ -1,0 +1,53 @@
+<div class="content-container">
+	<form [formGroup]="form"
+		(ngSubmit)="onSubmit()">
+		<!-- Subject -->
+		<div class="form-group">
+			<label for="subject">Select Subject:</label>
+			<select id="subject"
+				name="subject"
+				formControlName="subject">
+				<option *ngFor="let subject of subjects"
+					[value]="subject.id">
+					{{ subject.name }}
+				</option>
+			</select>
+
+			<div *ngIf="isInvalid(subject)"
+				class="error-message">
+				<div *ngIf="isRequiredError(subject)">
+					Subject is required.
+				</div>
+			</div>
+		</div>
+
+		<!-- Classroom -->
+		<div class="form-group">
+			<label for="classroom">Select Classroom:</label>
+			<select id="classroom"
+				name="classroom"
+				formControlName="classroom">
+				<option *ngFor="let classroom of classrooms"
+					[value]="classroom.id">
+					{{ classroom.name }}
+				</option>
+			</select>
+
+			<div *ngIf="isInvalid(classroom)"
+				class="error-message">
+				<div *ngIf="isRequiredError(classroom)">
+					Classrom is required.
+				</div>
+			</div>
+		</div>
+
+		<!-- Button -->
+		<div class="button-group">
+			<button type="submit"
+				appStyledButton>
+				Assign Subject
+			</button>
+		</div>
+		
+	</form>
+</div>

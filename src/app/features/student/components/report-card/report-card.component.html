@@ -1,0 +1,123 @@
+<div #htmlData
+	class="container mt-4 report-card-content">
+	<table class="table table-bordered">
+		<tbody>
+			<tr>
+				<td class="text-center">
+					<h1 class="font-weight-bold display-4">YEKOLA SCHOOL</h1>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<table class="table table-bordered">
+		<tbody>
+			<tr>
+				<td>
+					<p>
+						<strong>
+							Class and Academic Year:
+						</strong>
+						{{ student.classroom.name }} - {{ student.classroom.year }}
+					</p>
+					<p>
+						<strong>
+							Registration Number:
+						</strong>
+						{{ student.registrationNumber }}
+					</p>
+					<p>
+						<strong>Student Name:</strong>
+						{{ student.full_name }}
+					</p>
+					<p>
+						<strong>Date of Birth:</strong>
+						{{ student.date_of_birth | date }}
+					</p>
+					<p>
+						<strong>Gender:</strong>
+						{{ student.gender }}
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Type</th>
+				<th>Level</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					{{ student.classroom.name }}
+				</td>
+				<td>
+					{{ student.classroom.level }}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="table-container">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Subject</th>
+					<th>Type</th>
+					<th>Coefficient</th>
+					<th>Score</th>
+					<th>Appreciation</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let grade of grades">
+					<td>
+						{{ grade.subject.name }}
+					</td>
+					<td>{{ grade.type }}</td>
+					<td>
+						x {{ grade.subject.coefficient }}
+					</td>
+					<td>{{ grade.score }}</td>
+					<td>{{ grade.comment }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<table class="table table-bordered">
+		<tbody>
+			<tr>
+				<td>
+					<p>
+						<strong>General Average:</strong>
+						{{ moyenneGenerale.toFixed(2) }}
+					</p>
+					<p>
+						<strong>
+							Council Appreciation:
+						</strong>
+						Good
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="row mt-4">
+	<div class="button-group">
+		<button (click)="generatePDF()"
+			class="col-6 ">
+			Generate PDF
+		</button>
+		<button (click)="goback()"
+			class="col-6 ">
+			Back to list
+		</button>
+	</div>
+</div>

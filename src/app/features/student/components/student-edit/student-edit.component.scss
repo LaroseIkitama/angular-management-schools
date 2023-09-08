@@ -1,0 +1,8 @@
+button{
+  &:last-child{
+    margin-left: 15px;
+  }
+}
+.full-width {
+  grid-column: 1 / -1;
+}

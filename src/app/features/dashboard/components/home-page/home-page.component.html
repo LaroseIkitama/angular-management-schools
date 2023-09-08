@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0">
+		<title>Angular Navbar</title>
+		<!-- Link Bootstrap CSS -->
+		<link rel="stylesheet" href="home-page.component.scss">
+	</head>
+	<body>
+
+		<app-navbar></app-navbar>
+
+		<!-- Section Bannière -->
+		<section class="banner">
+			<h3>
+				GRADUATE SCHOOL OF COMPUTER SCIENCE
+			</h3>
+			<h1>
+				<span class="color-title">YOUR</span>
+				CLASSROOM
+			</h1>
+			<button>DISCOVER MORE</button>
+		</section>
+
+		<!-- Section "Who We Are" -->
+		<section class="who-we-are-section"
+			id="who-we-are">
+			<h3 class="who-we-are-title">Who We Are?</h3>
+
+			<div class="who-we-are-content">
+				<p>
+					At Yekola School, we understand the importance of practical experience in shaping successful technology professionals.
+				As part of our commitment to student success, we maintain strong industry connections, enabling us to offer
+				exceptional internship and hands-on project opportunities for our students.
+				</p>
+				<p>
+					Through these experiences, our students gain invaluable exposure to real-world challenges and emerging technologies,
+				preparing them to thrive in the dynamic and competitive IT landscape.
+				</p>
+			</div>
+		</section>
+
+		<!-- Section: Why Choose Yekola School? -->
+		<section class="why-choose"
+			id="why-choose">
+			<h3>
+				Why choose Yekola School?
+			</h3>
+
+			<div class="reasons-container">
+				<!-- Conteneur pour les reasons -->
+				<div [ngClass]="{'active': reason1.active,'default-selected': reason1.active}"
+					(click)="toggleReasonContent(reason1)"
+					class="reason">
+					<h4>
+						Comprehensive and Up-to-Date Curriculum
+					</h4>
+				</div>
+
+				<div [ngClass]="{'active': reason2.active}"
+					(click)="toggleReasonContent(reason2)"
+					class="reason">
+					<h4>
+						Qualified and Experienced Faculty
+					</h4>
+				</div>
+
+				<div [ngClass]="{'active': reason3.active}"
+					(click)="toggleReasonContent(reason3)"
+					class="reason">
+					<h4>
+						Internship and Hands-On Project Opportunities
+					</h4>
+				</div>
+			</div>
+			<!-- Fin du conteneur pour les reasons -->
+
+			<div class="slider-section">
+				<!-- Load the selected reason's description component -->
+				<ng-container *ngIf="selectedReason && selectedReason.component">
+					<ng-container *ngComponentOutlet="selectedReason.component"></ng-container>
+				</ng-container>
+			</div>
+		</section>
+		
+		<!-- Section "Contacts" -->
+		<section class="contacts-section"
+			id="contacts">
+			<div class="contacts-header">
+				<h3 class="contacts-title">Contact Us</h3>
+			</div>
+
+			<div class="contacts-content">
+				<div class="contact-info">
+					<p>
+						Phone:
+						<a href="tel:+11234567890">+1 (123) 456-7890</a>
+					</p>
+				</div>
+				<div class="contact-info">
+					<p>
+						Email:
+						<a href="mailto:info@yekolaschool.com">
+							info@yekolaschool.com
+						</a>
+					</p>
+				</div>
+				<div class="contact-info">
+					<p>
+						Address: 123 Main Street, City, Country
+					</p>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

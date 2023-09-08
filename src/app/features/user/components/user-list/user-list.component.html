@@ -1,0 +1,42 @@
+<mat-form-field class="search-field">
+	<input (keyup)="applyFilter($event)"
+		matInput
+		placeholder="Rechercher une classe">
+</mat-form-field>
+<p class="total-users">
+	Total Users: {{ totalUsers }}
+</p>
+
+<div class="page__content-data-list">
+	<ng-container *ngIf="totalUsers === 0">
+		<p class="no-matches-message">No matches found.</p>
+	</ng-container>
+	<div *ngFor="let user of dataSource.filteredData"
+		class="element-card">
+		<div class="element-card-content">
+			<h3 class="element-name">
+				{{ user.name | titlecase }}
+			</h3>
+			<p class="element-info">
+				Email: {{ user.email }}
+			</p>
+			<p class="element-info">
+				Role: {{ user.role }}
+			</p>
+		</div>
+		<div class="element-card-actions">
+
+			<button [routerLink]="['/navigation/users/edit',user.id]"
+				class="btn btn-edit">
+				<mat-icon>create</mat-icon>
+				<span class="hover-message">Edit</span>
+			</button>
+
+			<button (click)="deleteUser(user.id)"
+				class="btn btn-delete">
+				<mat-icon>delete</mat-icon>
+				<span class="hover-message">Delete</span>
+			</button>
+		</div>
+	</div>
+</div>

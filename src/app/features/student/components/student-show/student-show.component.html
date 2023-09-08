@@ -1,0 +1,53 @@
+<div class="details-container">
+	<div class="details-grid">
+		<div class="details-group">
+			<label for="name">Name:</label>
+			<p>{{ student.full_name }}</p>
+		</div>
+		<div class="details-group">
+			<label for="date_of_birth">Date of Birth:</label>
+			<p>
+				{{ student.date_of_birth | date }}
+			</p>
+		</div>
+		<div class="details-group">
+			<label for="address">Address:</label>
+			<p>
+				{{ student.address }}
+			</p>
+		</div>
+		<div class="details-group">
+			<label for="email">Email:</label>
+			<p>{{ student.email }}</p>
+		</div>
+		<div class="details-group">
+			<label for="phone_number">Phone Number:</label>
+			<p>
+				{{ student.phone_number }}
+			</p>
+		</div>
+		<div class="details-group">
+			<label for="registration_number">
+				Registration Number:
+			</label>
+			<p>
+				{{ student.registrationNumber }}
+			</p>
+		</div>
+		<div class="details-group">
+			<label for="classroom">Classroom:</label>
+			<p>
+				{{ student.classroom.name}}
+			</p>
+		</div>
+		<div class="details-group">
+			<label for="classroom">Level:</label>
+			<p>
+				{{ student.classroom.level}}
+			</p>
+		</div>
+	</div>
+	<div class="button-group">
+		<button (click)="goBack()" appStyledButton>Back To List</button>
+	</div>
+</div>

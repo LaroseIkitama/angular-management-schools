@@ -1,0 +1,45 @@
+<mat-form-field class="search-field">
+	<input (keyup)="applyFilter($event)"
+		matInput
+		placeholder="Search ...">
+</mat-form-field>
+
+<div class="actions-header">
+	<!-- Affichage du nombre total d'étudiants -->
+	<p class="total-students">
+		Total Students: {{totalStudents}}
+	</p>
+
+	<!-- Bouton pour rediriger -->
+	<button [routerLink]="'/navigation/classrooms/list'"
+		mat-button
+		appStyledButton width="auto">
+		Go back
+	</button>
+</div>
+
+<div class="page__content-data-list">
+	<ng-container *ngIf="dataSource.filteredData.length === 0">
+		<p class="no-matches-message">No matches found.</p>
+	</ng-container>
+	<div *ngFor="let student of dataSource.filteredData"
+		class="element-card">
+		<div class="element-card-content">
+			<h3 class="class-name">
+				{{ student.full_name | titlecase }}
+			</h3>
+			<p class="class-info">
+				Gender: {{ student.gender }}
+			</p>
+			<p class="class-info">
+				Matricule: {{ student.registrationNumber }}
+			</p>
+			<p class="class-info">
+				Email: {{ student.email }}
+			</p>
+			<p class="class-info">
+				Phone Number: {{ student.phone_number }}
+			</p>
+		</div>
+	</div>
+</div>

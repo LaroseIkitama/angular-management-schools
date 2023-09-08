@@ -1,0 +1,312 @@
+$primary-background-color: #040438;
+$primary-color: orange;
+$secondary-color: #1591d0;
+$tertiary-color: #7eab3e;
+$error-color: crimson;
+
+/* Formular Pages */
+.content-container {
+  padding: 20px;
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-size: 1em;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input {
+    width: 100%;
+    height: 47px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  select {
+    width: 100%;
+    height: 47px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+
+  select option {
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 100px;
+    max-height: 100px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+  }
+
+  .error-message {
+    color: $error-color;
+    font-size: 1em;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+}
+
+/* List Pages*/
+.search-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.page__content-data-list {
+  .no-matches-message {
+    text-align: center;
+    font-size: 1.5em;
+    color: $error-color;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .element-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid $primary-color;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+    .element-card-content {
+      flex: 1;
+      padding-right: 20px;
+
+      .element-name {
+        font-size: 1.2em;
+        font-weight:600;
+      }
+    }
+
+    .element-card-actions {
+      display: flex;
+
+      button.btn {
+        position: relative;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        margin-right: 10px;
+
+        mat-icon {
+          font-size: 20px;
+          margin-right: 5px;
+        }
+
+        .hover-message {
+          position: absolute;
+          bottom: -25px;
+          left: 50%;
+          transform: translateX(-50%);
+          white-space: nowrap;
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+
+          &:before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+          }
+        }
+
+        &:hover {
+          .hover-message {
+            opacity: 1;
+          }
+        }
+
+        &.btn-people {
+          color: $secondary-color;
+        }
+
+        &.btn-subject {
+          color: $tertiary-color;
+        }
+
+        &.btn-details {
+          color: $secondary-color;
+        }
+
+        &.btn-report-card {
+          color: rgb(166, 15, 91);
+        }
+
+        &.btn-delete {
+          color: $error-color;
+        }
+
+        &.btn-edit {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+/* Show - Details Pages */
+.details-container {
+  padding: 20px;
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+  }
+
+  .details-group {
+    margin-bottom: 10px;
+
+    label {
+      font-size: 1em;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 1em;
+    }
+  }
+}
+
+/* View Pages */
+body {
+  background-color: $primary-background-color;
+  font-family: "REM", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+
+  app-navigation-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .view-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .component-form {
+      width: 85%;
+      margin-top: 70px;
+    }
+
+    .component-list {
+      width: 82%;
+      margin-top: 100px;
+    }
+
+    .component-show {
+      width: 85%;
+      margin-top: 100px;
+    }
+
+    .component-form-two-input {
+      width: 85%;
+      margin-top: 170px;
+    }
+
+    app-home-admin-manager-profil {
+      width: 85%;
+    }
+  }
+}
+
+/* MEDIA QUERIES */
+
+/* Add media query for phone screens */
+/* Adjust the width and margin for the button on smaller screens */
+@media all and (max-width: 1000px) {
+ 
+  /* FORMULAR PAGES */
+  .content-container {
+    .form-grid {
+      display: flex;
+      flex-direction: column; /* Stack input fields vertically on smaller screens */
+    }
+
+    .form-group {
+      margin-bottom: 10px; /* Reduce margin for smaller screens */
+    }
+    .button-group {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 10px; /* Reduce top margin for smaller screens */
+      button {
+        &:last-child {
+          margin: 0;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  /* LIST */
+
+  .page__content-data-list {
+    .element-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .element-card-actions {
+      /* Change to column layout for phone screens */
+      margin-top: 10px; /* Add margin between actions on phone screens */
+    }
+  }
+
+  /* SHOW */
+
+  .details-container {
+    .details-grid {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .details-group {
+      margin-bottom: 5px;
+    }
+  }
+}

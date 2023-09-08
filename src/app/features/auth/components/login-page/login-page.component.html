@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="login-page.component.scss">
+		<title>Document</title>
+	</head>
+	<body>
+		<app-navbar></app-navbar>
+		<div class="content-container">
+
+			<div class="content-login">
+
+				<div class="login-description">
+					<h2>
+						Welcome to Yekola School
+					</h2>
+					<p>
+						Welcome to our Computer School Management Website. We provide a comprehensive range of courses and educational programs in the field of computer science and information technology. Whether you are a beginner looking to learn the basics or an experienced professional seeking to advance your skills, our dedicated team of instructors is here to support your learning journey.
+					</p>
+				</div>
+
+				<div class="login-form">
+					<form [formGroup]="form"
+						(ngSubmit)="onSubmit()">
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input type="email"
+								id="email"
+								name="email"
+								formControlName="email">
+
+							<div *ngIf="isInvalid(email)"
+								class="error-message">
+								<div *ngIf="isRequiredError(email)">Email is required.</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password">Password</label>
+							<input type="password"
+								id="password"
+								name="password"
+								formControlName="password">
+
+							<div *ngIf="isInvalid(password)"
+								class="error-message">
+								<div *ngIf="isRequiredError(password)">
+									Password is required.
+								</div>
+							</div>
+						</div>
+						<button type="submit" appStyledButton>Log in</button>
+					</form>
+				</div>
+
+			</div>
+
+		</div>
+
+	</body>
+</html>

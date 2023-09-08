@@ -1,0 +1,83 @@
+.navbar {
+  background-color: #040438 !important;
+
+  .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .navbar-brand {
+    font-size: 1.5em;
+    font-weight: bolder;
+
+    .color-title {
+      color: orange;
+    }
+  }
+
+  /* Apply a yellow border to the navbar links on hover */
+  .nav-link {
+    /* Add right margin to separate elements */
+    margin: 10px;
+    font-size: 1.1em;
+
+    /* Use box-shadow to create a yellow border on hover */
+    &:hover {
+      box-shadow: 0 0 0 2px orange;
+    }
+  }
+
+  /* Apply a yellow border to the dropdown elements on hover */
+  .dropdown-menu {
+    /* Use the navbar background color */
+    background-color: #040438;
+    z-index: -1;
+
+    /* Style for dropdown items */
+    .dropdown-item {
+      color: white; /* Text color */
+      font-size: 1.1em;
+      font-weight: lighter;
+
+      /* Add top border to separate elements */
+      border-top: 1px solid #444;
+
+      /* Styles for hover on dropdown items */
+      &:hover {
+        background-color: orange; 
+        color: #fff; 
+        box-shadow: none; 
+        border-top-color: transparent; 
+      }
+    }
+  }
+  ul.navbar-nav:last-child {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .navbar-brand {
+    display: none;
+  }
+
+  .navbar {
+    .nav-link {
+      margin: 5px;
+      font-size: 1em;
+    }
+
+    .dropdown-menu {
+      .dropdown-item {
+        font-size: 1em;
+      }
+    }
+  }
+  ul.navbar-nav:last-child {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

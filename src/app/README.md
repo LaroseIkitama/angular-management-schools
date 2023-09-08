@@ -1,0 +1,1 @@
+# angular-management-of-school

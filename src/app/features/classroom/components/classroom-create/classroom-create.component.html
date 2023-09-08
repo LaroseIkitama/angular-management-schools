@@ -1,0 +1,90 @@
+<div class="content-container">
+
+	<form [formGroup]="form"
+		(ngSubmit)="onSubmit()">
+		<div class="form-grid">
+
+			<!-- Name -->
+			<div class="form-group">
+				<label for="name">Name of classroom :</label>
+				<input type="text"
+					id="name"
+					name="name"
+					formControlName="name">
+
+				<div *ngIf="isInvalid(name)"
+					class="error-message">
+					<div *ngIf="isRequiredError(name)">Name is required.</div>
+					<div *ngIf="isPatternError(name)">
+						Name must contain only letters and cannot start with a space.
+					</div>
+				</div>
+			</div>
+
+			<!-- Year -->
+			<div class="form-group">
+				<label for="year">Year :</label>
+				<select id="year"
+					name="year"
+					formControlName="year">
+					<option *ngFor="let year of yearOptions"
+						[value]="year">
+						{{ year }}
+					</option>
+				</select>
+
+				<div *ngIf="isInvalid(year)"
+					class="error-message">
+					<div *ngIf="isRequiredError(year)">Year is required.</div>
+				</div>
+			</div>
+
+			<!-- Level -->
+			<div class="form-group">
+				<label for="level">Level :</label>
+				<select id="level"
+					name="level"
+					formControlName="level">
+					<option *ngFor="let option of levelOptions"
+						[value]="option">
+						{{ option }}
+					</option>
+				</select>
+
+				<div *ngIf="isInvalid(level)"
+					class="error-message">
+					<div *ngIf="isRequiredError(level)">Level is required.</div>
+				</div>
+			</div>
+
+			<!-- Maximum capacity -->
+			<div class="form-group">
+				<label for="maximum_capacity">Maximum capacity :</label>
+				<input type="number"
+					id="maximum_capacity"
+					name="maximum_capacity"
+					min="1"
+					formControlName="maximum_capacity">
+
+				<div *ngIf="isInvalid(maximum_capacity)"
+					class="error-message">
+					<div *ngIf="isRequiredError(maximum_capacity)">
+						Maximum capacity is required.
+					</div>
+					<div *ngIf="isPatternError(maximum_capacity)">
+						Capacity must be a number greater than or equal to 1.
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Button -->
+		<div class="button-group">
+			<button type="submit"
+				appStyledButton>
+				Create
+			</button>
+		</div>
+	</form>
+</div>

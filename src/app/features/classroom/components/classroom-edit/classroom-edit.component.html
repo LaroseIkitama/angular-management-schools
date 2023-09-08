@@ -1,0 +1,66 @@
+<div class="content-container">
+
+	<form (ngSubmit)="submitForm()">
+		<div class="form-grid">
+
+			<!-- Name -->
+			<div class="form-group">
+				<label for="name">Name of classroom :</label>
+				<input [(ngModel)]="currentClassroom.name"
+					type="text"
+					id="name"
+					name="name"
+					class="form-control">
+			</div>
+
+			<!-- Year -->
+			<div class="form-group">
+				<label for="year">Year :</label>
+				<select [(ngModel)]="selectedYear"
+					(ngModelChange)="onChangeYear($event)"
+					id="year"
+					name="year">
+					<option *ngFor="let year of yearOptions"
+						[value]="year">
+						{{ year }}
+					</option>
+				</select>
+			</div>
+
+			<!-- Level -->
+			<div class="form-group">
+				<label for="level">Level :</label>
+				<select [(ngModel)]="currentClassroom.level"
+					id="level"
+					name="level">
+					<option *ngFor="let option of levelOptions"
+						[value]="option">
+						{{ option }}
+					</option>
+				</select>
+			</div>
+
+			<!-- Maximum capacity -->
+			<div class="form-group">
+				<label for="maximum_capacity">Maximum capacity :</label>
+				<input [(ngModel)]="currentClassroom.maximum_capacity"
+					type="number"
+					id="maximum_capacity"
+					name="maximum_capacity"
+					min="1">
+			</div>
+		</div>
+
+		<!-- Button -->
+		<div class="button-group">
+			<button appStyledButton
+				type="submit">
+				Update
+			</button>
+			<button (click)="goBack()"
+				appStyledButton>
+				Back To List
+			</button>
+		</div>
+	</form>
+</div>
