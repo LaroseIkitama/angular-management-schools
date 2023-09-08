@@ -5,7 +5,7 @@ import { Observable, catchError, tap, throwError } from 'rxjs';
 import { User } from '../models/user';
 
 
-const apiUrl = 'http://localhost:8080/management_of_schools/users';
+const apiUrl = 'https://ikitamalarose-managementschool-253c884ef773.herokuapp.com/management_of_schools/users';
 
 
 @Injectable({

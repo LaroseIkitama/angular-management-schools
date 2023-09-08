@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 
 
 
-const apiUrl = 'http://localhost:8080/management_of_schools/auth';
+//const apiUrl = 'http://localhost:8080/management_of_schools/auth';
+const apiUrl = 'https://ikitamalarose-managementschool-253c884ef773.herokuapp.com/management_of_schools/auth';
 
 /* const httpOptions = {
   headers: new HttpHeaders({

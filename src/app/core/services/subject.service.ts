@@ -4,7 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Subject } from '../models/subject';
 import { Observable, catchError, tap, throwError } from 'rxjs';
 
-const apiUrl='http://localhost:8080/management_of_schools/subjects';
+const apiUrl='https://ikitamalarose-managementschool-253c884ef773.herokuapp.com/management_of_schools/subjects';
 
 
 @Injectable({
