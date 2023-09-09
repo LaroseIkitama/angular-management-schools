@@ -5,12 +5,14 @@
 </mat-form-field>
 
 <p class="total-grades">
-	Total Grades: {{ totalGrades }}
+	Total des Notes {{ totalGrades }}
 </p>
 
 <div class="page__content-data-list">
 	<ng-container *ngIf="dataSource.filteredData.length === 0">
-		<p class="no-matches-message">No matches found.</p>
+		<p class="no-matches-message">
+			Aucune correspondance trouvée.
+		</p>
 	</ng-container>
 	<div *ngFor="let grade of dataSource.filteredData"
 		class="element-card">
@@ -19,32 +21,32 @@
 				Type : {{ grade.type  }}
 			</p>
 			<p class="element-info">
-				Subject : {{ grade.subject.name  }}
+				Matière : {{ grade.subject.name  }}
 			</p>
 			<p class="element-info">
-				Score : {{ grade.score  }} / 20
+				Note : {{ grade.score  }} / 20
 			</p>
 			<p class="element-info">
-				Comment : {{ grade.comment  }}
+				Commentaire : {{ grade.comment  }}
 			</p>
 		</div>
 		<div class="element-card-actions">
 			<button [routerLink]="['/navigation/grades/show',grade.id]"
 				class="btn btn-details">
 				<mat-icon>info</mat-icon>
-				<span class="hover-message">Details</span>
+				<span class="hover-message">Détails</span>
 			</button>
 
 			<button [routerLink]="['/navigation/grades/edit',grade.id]"
 				class="btn btn-edit">
 				<mat-icon>create</mat-icon>
-				<span class="hover-message">Edit</span>
+				<span class="hover-message">Modifier</span>
 			</button>
 
 			<button (click)="deleteGrade(grade.id)"
 				class="btn btn-delete">
 				<mat-icon>delete</mat-icon>
-				<span class="hover-message">Delete</span>
+				<span class="hover-message">Supprimer</span>
 			</button>
 		</div>
 	</div>

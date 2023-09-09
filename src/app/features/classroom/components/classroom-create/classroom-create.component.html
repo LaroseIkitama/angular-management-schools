@@ -6,7 +6,7 @@
 
 			<!-- Name -->
 			<div class="form-group">
-				<label for="name">Name of classroom :</label>
+				<label for="name">Nom de la salle de classe :</label>
 				<input type="text"
 					id="name"
 					name="name"
@@ -14,16 +14,16 @@
 
 				<div *ngIf="isInvalid(name)"
 					class="error-message">
-					<div *ngIf="isRequiredError(name)">Name is required.</div>
+					<div *ngIf="isRequiredError(name)">Le nom est requis.</div>
 					<div *ngIf="isPatternError(name)">
-						Name must contain only letters and cannot start with a space.
+						Le nom ne peut contenir que des lettres et ne peut pas commencer par un espace.
 					</div>
 				</div>
 			</div>
 
 			<!-- Year -->
 			<div class="form-group">
-				<label for="year">Year :</label>
+				<label for="year">Année :</label>
 				<select id="year"
 					name="year"
 					formControlName="year">
@@ -35,13 +35,13 @@
 
 				<div *ngIf="isInvalid(year)"
 					class="error-message">
-					<div *ngIf="isRequiredError(year)">Year is required.</div>
+					<div *ngIf="isRequiredError(year)">L'année est requise.</div>
 				</div>
 			</div>
 
 			<!-- Level -->
 			<div class="form-group">
-				<label for="level">Level :</label>
+				<label for="level">Niveau :</label>
 				<select id="level"
 					name="level"
 					formControlName="level">
@@ -53,13 +53,13 @@
 
 				<div *ngIf="isInvalid(level)"
 					class="error-message">
-					<div *ngIf="isRequiredError(level)">Level is required.</div>
+					<div *ngIf="isRequiredError(level)">Le niveau est requis.</div>
 				</div>
 			</div>
 
 			<!-- Maximum capacity -->
 			<div class="form-group">
-				<label for="maximum_capacity">Maximum capacity :</label>
+				<label for="maximum_capacity">Capacité maximale :</label>
 				<input type="number"
 					id="maximum_capacity"
 					name="maximum_capacity"
@@ -69,10 +69,10 @@
 				<div *ngIf="isInvalid(maximum_capacity)"
 					class="error-message">
 					<div *ngIf="isRequiredError(maximum_capacity)">
-						Maximum capacity is required.
+						La capacité maximale est requise.
 					</div>
 					<div *ngIf="isPatternError(maximum_capacity)">
-						Capacity must be a number greater than or equal to 1.
+						La capacité doit être un nombre supérieur ou égal à 1.
 					</div>
 				</div>
 
@@ -83,7 +83,7 @@
 		<div class="button-group">
 			<button type="submit"
 				appStyledButton>
-				Create
+				Créer
 			</button>
 		</div>
 	</form>

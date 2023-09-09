@@ -1,16 +1,18 @@
 <mat-form-field class="search-field">
 	<input (keyup)="applyFilter($event)"
 		matInput
-		placeholder="Search ...">
+		placeholder="Chercher ...">
 </mat-form-field>
 
 <p class="total-subjects">
-	Total Subjects: {{ totalSubjects }}
+	Total des Matière : {{ totalSubjects }}
 </p>
 
 <div class="page__content-data-list">
 	<ng-container *ngIf="totalSubjects === 0">
-		<p class="no-matches-message">No matches found.</p>
+		<p class="no-matches-message">
+			Aucune correspondance trouvée.
+		</p>
 	</ng-container>
 	<div *ngFor="let subject of dataSource.filteredData"
 		class="element-card">
@@ -27,13 +29,13 @@
 			<button [routerLink]="['/navigation/subjects/edit',subject.id]"
 				class="btn btn-edit">
 				<mat-icon>create</mat-icon>
-				<span class="hover-message">Edit</span>
+				<span class="hover-message">Modifier</span>
 			</button>
 
 			<button (click)="deleteSubject(subject.id)"
 				class="btn btn-delete">
 				<mat-icon>delete</mat-icon>
-				<span class="hover-message">Delete</span>
+				<span class="hover-message">Supprime</span>
 			</button>
 		</div>
 	</div>

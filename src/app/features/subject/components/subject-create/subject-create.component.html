@@ -3,20 +3,20 @@
 		(ngSubmit)="onSubmit()">
 		<!-- Name -->
 		<div class="form-group">
-			<label for="name">Name:</label>
+			<label for="name">Nom :</label>
 			<input type="text"
 				id="name"
 				name="name"
 				formControlName="name">
 			<div *ngIf="isInvalid(name)"
 				class="error-message">
-				<div *ngIf="isRequiredError(name)">Name is required.</div>
+				<div *ngIf="isRequiredError(name)">Le nom est requis.</div>
 			</div>
 		</div>
 
 		<!-- Coefficient -->
 		<div class="form-group">
-			<label for="coefficient">Coefficient:</label>
+			<label for="coefficient">Coefficient :</label>
 			<input type="number"
 				id="coefficient"
 				name="coefficient"
@@ -24,7 +24,7 @@
 			<div *ngIf="isInvalid(coefficient)"
 				class="error-message">
 				<div *ngIf="isRequiredError(coefficient)">
-					Coefficient is required.
+					Le coefficient est requis.
 				</div>
 			</div>
 		</div>
@@ -33,7 +33,7 @@
 		<div class="button-group">
 			<button type="submit"
 				appStyledButton>
-				Create
+				Créer
 			</button>
 		</div>
 	</form>

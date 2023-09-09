@@ -5,12 +5,14 @@
 		placeholder="Rechercher une classe">
 </mat-form-field>
 <p class="total-students">
-	Total Users: {{ totalStudents }}
+	Total d'utilisateurs : {{ totalStudents }}
 </p>
 
 <div class="page__content-data-list">
 	<ng-container *ngIf="totalStudents === 0">
-		<p class="no-matches-message">No matches found.</p>
+		<p class="no-matches-message">
+			Aucune correspondance trouvée.
+		</p>
 	</ng-container>
 	<div *ngFor="let student of dataSource.filteredData"
 		class="element-card">
@@ -19,45 +21,45 @@
 				{{ student.full_name | titlecase }}
 			</h3>
 			<p class="element-info">
-				Gender: {{ student.gender }}
+				Genre : {{ student.gender }}
 			</p>
 			<p class="element-info">
-				Matricule: {{ student.registrationNumber }}
+				Matricule : {{ student.registrationNumber }}
 			</p>
 			<p class="element-info">
-				Email: {{ student.email }}
+				Email : {{ student.email }}
 			</p>
 			<p class="element-info">
-				Phone Number: {{ student.phone_number }}
+				Numéro de téléphone : {{ student.phone_number }}
 			</p>
 		</div>
 		<div class="element-card-actions">
 			<button [routerLink]="['/navigation/students', student.id, 'grades']"
 				class="btn btn-subject">
 				<mat-icon>subject</mat-icon>
-				<span class="hover-message">Grades</span>
+				<span class="hover-message">Notes</span>
 			</button>
 			<button [routerLink]="['/navigation/students', student.id, 'report-card']"
 				class="btn btn-report-card">
 				<mat-icon>description</mat-icon>
-				<span class="hover-message">Report Card</span>
+				<span class="hover-message">Bulletin</span>
 			</button>
 			<button [routerLink]="['/navigation/students/show',student.id]"
 				class="btn btn-details">
 				<mat-icon>info</mat-icon>
-				<span class="hover-message">Details</span>
+				<span class="hover-message">Détails</span>
 			</button>
 
 			<button [routerLink]="['/navigation/students/edit',student.id]"
 				class="btn btn-edit">
 				<mat-icon>create</mat-icon>
-				<span class="hover-message">Edit</span>
+				<span class="hover-message">Modifier</span>
 			</button>
 
 			<button (click)="deleteStudent(student.id)"
 				class="btn btn-delete">
 				<mat-icon>delete</mat-icon>
-				<span class="hover-message">Delete</span>
+				<span class="hover-message">Supprimer</span>
 			</button>
 		</div>
 	</div>

@@ -5,20 +5,20 @@
 
 			<!-- Name -->
 			<div class="form-group">
-				<label for="name">Name:</label>
+				<label for="name">Nom :</label>
 				<input type="text"
 					id="name"
 					name="name"
 					formControlName="name">
 				<div *ngIf="isInvalid(name)"
 					class="error-message">
-					<div *ngIf="isRequiredError(name)">Name is required.</div>
+					<div *ngIf="isRequiredError(name)">Le nom est requis.</div>
 				</div>
 			</div>
 
 			<!-- Password -->
 			<div class="form-group">
-				<label for="password">Password:</label>
+				<label for="password">Mot de passe :</label>
 				<input type="password"
 					id="password"
 					name="password"
@@ -26,30 +26,32 @@
 				<div *ngIf="isInvalid(password)"
 					class="error-message">
 					<div *ngIf="isRequiredError(password)">
-						Password is required.
+						Le mot de passe est requis
 					</div>
 				</div>
 			</div>
 
 			<!-- Email -->
 			<div class="form-group">
-				<label for="email">Email:</label>
+				<label for="email">Email :</label>
 				<input type="email"
 					id="email"
 					name="email"
 					formControlName="email">
 				<div *ngIf="isInvalid(email)"
 					class="error-message">
-					<div *ngIf="isRequiredError(email)">Email is required.</div>
+					<div *ngIf="isRequiredError(email)">
+						L'adresse email est requise.
+					</div>
 					<div *ngIf="isPatternError(email)">
-						Invalid email format.
+						Format d'email invalide.
 					</div>
 				</div>
 			</div>
 
 			<!-- Role -->
 			<div class="form-group">
-				<label for="role">Role:</label>
+				<label for="role">Rôle :</label>
 				<select id="role"
 					formControlName="role">
 					<option value="{{userRole.Administrative}}">
@@ -63,7 +65,9 @@
 				</select>
 				<div *ngIf="isInvalid(role)"
 					class="error-message">
-					<div *ngIf="isRequiredError(role)">Role is required.</div>
+					<div *ngIf="isRequiredError(role)">
+						Le rôle est requis..
+					</div>
 				</div>
 			</div>
 		</div>
@@ -72,7 +76,7 @@
 		<div class="button-group">
 			<button type="submit"
 				appStyledButton>
-				Create
+				Créer
 			</button>
 		</div>
 	</form>

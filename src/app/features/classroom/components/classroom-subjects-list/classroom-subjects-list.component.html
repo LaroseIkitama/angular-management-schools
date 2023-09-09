@@ -7,7 +7,7 @@
 <div class="actions-header">
 	<!-- Affichage du nombre total d'étudiants -->
 	<p class="total-students">
-		Total Students: {{totalSubjects}}
+		Total de matières : {{totalSubjects}}
 	</p>
 
 	<!-- Bouton pour rediriger -->
@@ -15,13 +15,15 @@
 		mat-button
 		appStyledButton
 		width="auto">
-		GO BACK
+		RETOUR
 	</button>
 </div>
 
 <div class="page__content-data-list">
 	<ng-container *ngIf="dataSource.filteredData.length === 0">
-		<p class="no-matches-message">No matches found.</p>
+		<p class="no-matches-message">
+			Aucune correspondance trouvée.
+		</p>
 	</ng-container>
 	<div *ngFor="let subject of dataSource.filteredData"
 		class="element-card">

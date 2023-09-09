@@ -6,20 +6,23 @@
 
 <div class="actions-header">
 	<p class="total-grades">
-		Total Grades: {{totalGrades}}
+		Total des notes : {{totalGrades}}
 	</p>
 
 	<!-- Bouton pour rediriger -->
 	<button [routerLink]="'/navigation/students/list'"
 		mat-button
-		appStyledButton width="auto">
-		GO BACK
+		appStyledButton
+		width="auto">
+		RETOUR
 	</button>
 </div>
 
 <div class="page__content-data-list">
 	<ng-container *ngIf="dataSource.filteredData.length === 0">
-		<p class="no-matches-message">No matches found.</p>
+		<p class="no-matches-message">
+			Aucune correspondance trouvée.
+		</p>
 	</ng-container>
 	<div *ngFor="let grade of dataSource.filteredData"
 		class="element-card">
@@ -28,10 +31,10 @@
 				{{ grade.type | titlecase }}
 			</h3>
 			<p class="element-info">
-				Subject : {{ grade.subject.name  }}
+				Matière : {{ grade.subject.name  }}
 			</p>
 			<p class="element-info">
-				Score : {{ grade.score  }}/20
+				Note : {{ grade.score  }}/20
 			</p>
 		</div>
 	</div>

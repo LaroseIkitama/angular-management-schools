@@ -10,8 +10,8 @@ import { ClassroomService } from 'src/app/core/services/classroom.service';
 })
 export class ClassroomEditComponent implements OnInit {
   @Input() CLASSROOM_ID!: number;
-  levelOptions: string[] = ['License 1', 'License 2', 'License 3', 'Master 1', 'Master 2', 'Master 3'];
-  yearOptions: number[] = this.generateYearOptions(1990, 2050);
+  levelOptions: string[] = ['Licence 1', 'Licence 2', 'Licence 3', 'Master 1', 'Master 2'];
+  yearOptions: number[] = this.generateYearOptions(2000, 2050);
 
   currentClassroom: Classroom = new Classroom();
   selectedYear!: number;

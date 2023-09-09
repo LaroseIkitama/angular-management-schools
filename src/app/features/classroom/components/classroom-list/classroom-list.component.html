@@ -4,11 +4,15 @@
 		matInput
 		placeholder="Rechercher une classe">
 </mat-form-field>
-<p class="total-classes">Total Classes: {{ totalClasses }}</p>
+<p class="total-classes">
+	Total de classes : {{ totalClasses }}
+</p>
 
 <div class="page__content-data-list">
 	<ng-container *ngIf="dataSource.filteredData.length === 0">
-		<p class="no-matches-message">No matches found.</p>
+		<p class="no-matches-message">
+			Aucune correspondance trouvée.
+		</p>
 	</ng-container>
 	<div *ngFor="let classroom of dataSource.filteredData"
 		class="element-card">
@@ -17,13 +21,13 @@
 				{{ classroom.name | titlecase }}
 			</h3>
 			<p class="element-info">
-				Level: {{ classroom.level }}
+				Niveau : {{ classroom.level }}
 			</p>
 			<p class="element-info">
-				Year: {{ classroom.year }}
+				Année : {{ classroom.year }}
 			</p>
 			<p class="element-info">
-				Max Capacity: {{ classroom.maximum_capacity }}
+				Capacité maximale : {{ classroom.maximum_capacity }}
 			</p>
 		</div>
 		<div class="element-card-actions">
@@ -31,25 +35,25 @@
 			<button [routerLink]="['/navigation/classrooms', classroom.id, 'students']"
 				class="btn btn-people">
 				<mat-icon>people</mat-icon>
-				<span class="hover-message">Students</span>
+				<span class="hover-message">Étudiants</span>
 			</button>
 
 			<button [routerLink]="['/navigation/classrooms', classroom.id, 'subjects']"
 				class="btn btn-subject">
 				<mat-icon>subject</mat-icon>
-				<span class="hover-message">Subjects</span>
+				<span class="hover-message">Matières</span>
 			</button>
 
 			<button [routerLink]="['/navigation/classrooms/edit', classroom.id]"
 				class="btn btn-edit">
 				<mat-icon>create</mat-icon>
-				<span class="hover-message">Edit</span>
+				<span class="hover-message">Modifier</span>
 			</button>
 
 			<button (click)="deleteClassroom(classroom.id)"
 				class="btn btn-delete">
 				<mat-icon>delete</mat-icon>
-				<span class="hover-message">Delete</span>
+				<span class="hover-message">Supprimer</span>
 			</button>
 		</div>
 	</div>

@@ -1,37 +1,37 @@
 <div class="details-container">
 	<div class="details-grid">
 		<div class="details-group">
-			<label for="student">Student:</label>
+			<label for="student">Étudiant :</label>
 			<p>
 				{{ grade.student.full_name }}
 			</p>
 		</div>
 		<div class="details-group">
-			<label for="classroom">Classroom:</label>
+			<label for="classroom">Classe :</label>
 			<p>
 				{{ grade.student.classroom.name }}
 			</p>
 		</div>
 		<div class="details-group">
-			<label for="level">Level:</label>
+			<label for="level">Niveau :</label>
 			<p>
 				{{ grade.student.classroom.level }}
 			</p>
 		</div>
 		<div class="details-group">
-			<label for="year">Year:</label>
+			<label for="year">Année :</label>
 			<p>
 				{{ grade.student.classroom.year }}
 			</p>
 		</div>
 		<div class="details-group">
-			<label for="subject">Subject:</label>
+			<label for="subject">Matière :</label>
 			<p>
 				{{ grade.subject.name }}
 			</p>
 		</div>
 		<div class="details-group">
-			<label for="coefficient">Coefficient:</label>
+			<label for="coefficient">Coefficient :</label>
 			<p>
 				x {{ grade.subject.coefficient }}
 			</p>
@@ -42,11 +42,14 @@
 		</div>
 
 		<div class="details-group">
-			<label for="comment">Comment:</label>
+			<label for="comment">Commentaire :</label>
 			<p>{{ grade.comment }}</p>
 		</div>
 	</div>
 	<div class="button-group">
-		<button (click)="goBack()" appStyledButton>Back To List</button>
+		<button (click)="goBack()"
+			appStyledButton>
+			Retourner à la liste
+		</button>
 	</div>
 </div>

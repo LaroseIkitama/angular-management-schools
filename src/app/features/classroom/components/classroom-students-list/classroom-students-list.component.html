@@ -7,20 +7,23 @@
 <div class="actions-header">
 	<!-- Affichage du nombre total d'étudiants -->
 	<p class="total-students">
-		Total Students: {{totalStudents}}
+		Total d'étudiants: {{totalStudents}}
 	</p>
 
 	<!-- Bouton pour rediriger -->
 	<button [routerLink]="'/navigation/classrooms/list'"
 		mat-button
-		appStyledButton width="auto">
-		Go back
+		appStyledButton
+		width="auto">
+		RETOUR
 	</button>
 </div>
 
 <div class="page__content-data-list">
 	<ng-container *ngIf="dataSource.filteredData.length === 0">
-		<p class="no-matches-message">No matches found.</p>
+		<p class="no-matches-message">
+			Aucune correspondance trouvée.
+		</p>
 	</ng-container>
 	<div *ngFor="let student of dataSource.filteredData"
 		class="element-card">
@@ -29,16 +32,16 @@
 				{{ student.full_name | titlecase }}
 			</h3>
 			<p class="class-info">
-				Gender: {{ student.gender }}
+				Genre : {{ student.gender }}
 			</p>
 			<p class="class-info">
-				Matricule: {{ student.registrationNumber }}
+				Matricule : {{ student.registrationNumber }}
 			</p>
 			<p class="class-info">
-				Email: {{ student.email }}
+				Email : {{ student.email }}
 			</p>
 			<p class="class-info">
-				Phone Number: {{ student.phone_number }}
+				Numéro de téléphone : {{ student.phone_number }}
 			</p>
 		</div>
 	</div>

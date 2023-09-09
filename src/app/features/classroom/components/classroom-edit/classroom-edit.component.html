@@ -5,7 +5,7 @@
 
 			<!-- Name -->
 			<div class="form-group">
-				<label for="name">Name of classroom :</label>
+				<label for="name">Nom de la salle de classe  :</label>
 				<input [(ngModel)]="currentClassroom.name"
 					type="text"
 					id="name"
@@ -15,7 +15,7 @@
 
 			<!-- Year -->
 			<div class="form-group">
-				<label for="year">Year :</label>
+				<label for="year">Année  :</label>
 				<select [(ngModel)]="selectedYear"
 					(ngModelChange)="onChangeYear($event)"
 					id="year"
@@ -29,7 +29,7 @@
 
 			<!-- Level -->
 			<div class="form-group">
-				<label for="level">Level :</label>
+				<label for="level">Niveau  :</label>
 				<select [(ngModel)]="currentClassroom.level"
 					id="level"
 					name="level">
@@ -42,7 +42,7 @@
 
 			<!-- Maximum capacity -->
 			<div class="form-group">
-				<label for="maximum_capacity">Maximum capacity :</label>
+				<label for="maximum_capacity">Capacité maximale :</label>
 				<input [(ngModel)]="currentClassroom.maximum_capacity"
 					type="number"
 					id="maximum_capacity"
@@ -55,11 +55,11 @@
 		<div class="button-group">
 			<button appStyledButton
 				type="submit">
-				Update
+				Mettre à jour
 			</button>
 			<button (click)="goBack()"
 				appStyledButton>
-				Back To List
+				Retourner à la liste
 			</button>
 		</div>
 	</form>

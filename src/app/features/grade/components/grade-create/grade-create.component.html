@@ -5,7 +5,7 @@
 
 			<!-- Score -->
 			<div class="form-group">
-				<label for="score">Score:</label>
+				<label for="score">Note :</label>
 				<input type="number"
 					id="score"
 					name="score"
@@ -13,13 +13,13 @@
 
 				<div *ngIf="isInvalid(score)"
 					class="error-message">
-					<div *ngIf="isRequiredError(score)">Score is required.</div>
+					<div *ngIf="isRequiredError(score)">La note est requise.</div>
 				</div>
 			</div>
 
 			<!-- Type -->
 			<div class="form-group">
-				<label for="type">Type:</label>
+				<label for="type">Type :</label>
 				<select id="type"
 					formControlName="type">
 					<option value="{{gradeType.Exam}}">{{gradeType.Exam}}</option>
@@ -30,13 +30,13 @@
 
 				<div *ngIf="isInvalid(type)"
 					class="error-message">
-					<div *ngIf="isRequiredError(type)">type is required.</div>
+					<div *ngIf="isRequiredError(type)">Le type est requis.</div>
 				</div>
 			</div>
 
 			<!-- Student -->
 			<div class="form-group">
-				<label for="student">Student:</label>
+				<label for="student">Étudiant :</label>
 				<select id="student"
 					formControlName="student">
 					<option *ngFor="let student of students"
@@ -48,14 +48,14 @@
 				<div *ngIf="isInvalid(student)"
 					class="error-message">
 					<div *ngIf="isRequiredError(student)">
-						student is required.
+						L'étudiant est requis.
 					</div>
 				</div>
 			</div>
 
 			<!-- Subject -->
 			<div class="form-group">
-				<label for="subject">Subject:</label>
+				<label for="subject">Matière :</label>
 				<select id="subject"
 					formControlName="subject">
 					<option *ngFor="let subject of subjects"
@@ -67,14 +67,14 @@
 				<div *ngIf="isInvalid(subject)"
 					class="error-message">
 					<div *ngIf="isRequiredError(subject)">
-						subject is required.
+						La matière est requise.
 					</div>
 				</div>
 			</div>
 
 			<!-- Comment -->
 			<div class="form-group full-width">
-				<label for="comment">Comment:</label>
+				<label for="comment">Commentaire:</label>
 				<textarea id="comment"
 					name="comment"
 					formControlName="comment"></textarea>
@@ -83,14 +83,14 @@
 			<div *ngIf="isInvalid(comment)"
 				class="error-message">
 				<div *ngIf="isRequiredError(comment)">
-					comment is required.
+					Le commentaire est requis.
 				</div>
 			</div>
 		</div>
 
 		<!-- Button -->
 		<div class="button-group">
-			<button type="submit" appStyledButton>Add Grade</button>
+			<button type="submit" appStyledButton>Ajouter la note</button>
 		</div>
 	</form>
 </div>

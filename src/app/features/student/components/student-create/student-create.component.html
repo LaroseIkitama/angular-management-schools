@@ -6,7 +6,7 @@
 
 			<!-- Full name -->
 			<div class="form-group">
-				<label for="full_name">Full Name:</label>
+				<label for="full_name">Nom complet :</label>
 				<input type="text"
 					id="full_name"
 					name="full_name"
@@ -15,28 +15,28 @@
 				<div *ngIf="isInvalid(full_name)"
 					class="error-message">
 					<div *ngIf="isRequiredError(full_name)">
-						Full name is required.
+						Le nom complet est requis.
 					</div>
 				</div>
 			</div>
 
 			<!-- Date of birth -->
 			<div class="form-group">
-				<label for="date_of_birth">Date of Birth:</label>
+				<label for="date_of_birth">Date de naissance :</label>
 				<input type="date"
 					formControlName="date_of_birth">
 
 				<div *ngIf="isInvalid(date_of_birth)"
 					class="error-message">
 					<div *ngIf="isRequiredError(date_of_birth)">
-						Date of Birth is required.
+						La date de naissance est requise.
 					</div>
 				</div>
 			</div>
 
 			<!-- Adress -->
 			<div class="form-group">
-				<label for="address">Address:</label>
+				<label for="address">Addresse :</label>
 				<input type="text"
 					id="address"
 					name="address"
@@ -45,14 +45,14 @@
 				<div *ngIf="isInvalid(address)"
 					class="error-message">
 					<div *ngIf="isRequiredError(address)">
-						Address is required.
+						L'adresse est requise.
 					</div>
 				</div>
 			</div>
 
 			<!-- Email -->
 			<div class="form-group">
-				<label for="email">Email:</label>
+				<label for="email">Email :</label>
 				<input type="email"
 					id="email"
 					name="email"
@@ -60,16 +60,18 @@
 
 				<div *ngIf="isInvalid(email)"
 					class="error-message">
-					<div *ngIf="isRequiredError(email)">Email is required.</div>
+					<div *ngIf="isRequiredError(email)">L'email est requis.</div>
 					<div *ngIf="isPatternError(email)">
-						Invalid email format.
+						Format d'email invalide.
 					</div>
 				</div>
 			</div>
 
 			<!-- Phone Number -->
 			<div class="form-group">
-				<label for="phone_number">Phone Number:</label>
+				<label for="phone_number">
+					Numéro de téléphone :
+				</label>
 				<input type="tel"
 					id="phone_number"
 					name="phone_number"
@@ -78,17 +80,17 @@
 				<div *ngIf="isInvalid(phone_number)"
 					class="error-message">
 					<div *ngIf="isRequiredError(phone_number)">
-						Phone Number is required.
+						Le numéro de téléphone est requis.
 					</div>
 					<div *ngIf="isPatternError(phone_number)">
-						Invalid phone number format.
+						Format de numéro de téléphone invalide. Minimum 9 chiffres
 					</div>
 				</div>
 			</div>
 
 			<!-- Classroom -->
 			<div class="form-group">
-				<label for="classroom">Classroom:</label>
+				<label for="classroom">Salle de classe :</label>
 				<select id="classroom"
 					formControlName="classroom">
 					<option *ngFor="let classroom of classrooms"
@@ -100,14 +102,14 @@
 				<div *ngIf="isInvalid(classroom)"
 					class="error-message">
 					<div *ngIf="isRequiredError(classroom)">
-						Classroom is required.
+						La salle de classe est requise.
 					</div>
 				</div>
 			</div>
 
 			<!-- Gender -->
 			<div class="form-group full-width">
-				<label for="gender">Gender:</label>
+				<label for="gender">Genre :</label>
 				<select id="gender"
 					formControlName="gender">
 					<option value="{{genderType.Female}}">
@@ -118,7 +120,9 @@
 
 				<div *ngIf="isInvalid(gender)"
 					class="error-message">
-					<div *ngIf="isRequiredError(gender)">Gender is required.</div>
+					<div *ngIf="isRequiredError(gender)">
+						Le genre est requis.
+					</div>
 				</div>
 			</div>
 		</div>
@@ -127,7 +131,7 @@
 		<div class="button-group">
 			<button type="submit"
 				appStyledButton>
-				Create
+				Créer
 			</button>
 		</div>
 	</form>

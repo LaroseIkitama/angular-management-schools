@@ -16,22 +16,20 @@
 				<td>
 					<p>
 						<strong>
-							Class and Academic Year:
+							Classe et Année Académique:
 						</strong>
 						{{ student.classroom.name }} - {{ student.classroom.year }}
 					</p>
 					<p>
-						<strong>
-							Registration Number:
-						</strong>
+						<strong>Numéro Matricule:</strong>
 						{{ student.registrationNumber }}
 					</p>
 					<p>
-						<strong>Student Name:</strong>
+						<strong>Nom de l'Étudiant:</strong>
 						{{ student.full_name }}
 					</p>
 					<p>
-						<strong>Date of Birth:</strong>
+						<strong>Date de Naissance:</strong>
 						{{ student.date_of_birth | date }}
 					</p>
 					<p>
@@ -46,8 +44,8 @@
 	<table class="table table-bordered">
 		<thead>
 			<tr>
-				<th>Type</th>
-				<th>Level</th>
+				<th>Classe</th>
+				<th>Niveau</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -66,11 +64,11 @@
 		<table class="table table-bordered">
 			<thead>
 				<tr>
-					<th>Subject</th>
+					<th>Matière</th>
 					<th>Type</th>
 					<th>Coefficient</th>
-					<th>Score</th>
-					<th>Appreciation</th>
+					<th>Note</th>
+					<th>Appréciation</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -88,20 +86,20 @@
 			</tbody>
 		</table>
 	</div>
-	
+
 	<table class="table table-bordered">
 		<tbody>
 			<tr>
 				<td>
 					<p>
-						<strong>General Average:</strong>
+						<strong>Moyenne Générale :</strong>
 						{{ moyenneGenerale.toFixed(2) }}
 					</p>
 					<p>
 						<strong>
-							Council Appreciation:
+							Appréciation du Conseil :
 						</strong>
-						Good
+						Bien
 					</p>
 				</td>
 			</tr>
@@ -113,11 +111,11 @@
 	<div class="button-group">
 		<button (click)="generatePDF()"
 			class="col-6 ">
-			Generate PDF
+			Générer un PDF
 		</button>
 		<button (click)="goback()"
 			class="col-6 ">
-			Back to list
+			Retourner à la liste
 		</button>
 	</div>
 </div>

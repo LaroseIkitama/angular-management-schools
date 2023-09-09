@@ -3,7 +3,9 @@
 		(ngSubmit)="onSubmit()">
 		<!-- Subject -->
 		<div class="form-group">
-			<label for="subject">Select Subject:</label>
+			<label for="subject">
+				Sélectionnez la matière :
+			</label>
 			<select id="subject"
 				name="subject"
 				formControlName="subject">
@@ -16,14 +18,16 @@
 			<div *ngIf="isInvalid(subject)"
 				class="error-message">
 				<div *ngIf="isRequiredError(subject)">
-					Subject is required.
+					La matière est requise.
 				</div>
 			</div>
 		</div>
 
 		<!-- Classroom -->
 		<div class="form-group">
-			<label for="classroom">Select Classroom:</label>
+			<label for="classroom">
+				Sélectionnez la salle de classe :
+			</label>
 			<select id="classroom"
 				name="classroom"
 				formControlName="classroom">
@@ -36,7 +40,7 @@
 			<div *ngIf="isInvalid(classroom)"
 				class="error-message">
 				<div *ngIf="isRequiredError(classroom)">
-					Classrom is required.
+					La salle de classe est requise
 				</div>
 			</div>
 		</div>
@@ -45,9 +49,9 @@
 		<div class="button-group">
 			<button type="submit"
 				appStyledButton>
-				Assign Subject
+				Affecter la matière
 			</button>
 		</div>
-		
+
 	</form>
 </div>
