@@ -188,7 +188,7 @@
 								DÉCONNEXION
 							</a>
 						</li>
-						<li>
+						<li *ngIf="loggedInUserRole==='Admin' || loggedInUserRole==='SuperAdmin'">
 							<a [routerLink]="['/navigation/users/parameters']"
 								class="dropdown-item">
 								PARAMÈTRES
